@@ -2,70 +2,113 @@
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>โปรโมทเว็ปโดยซีกันฟิว</title>
+        <meta name="description" content="เว็บไซต์โปรโมทสาขาวิทยาการคอมพิวเตอร์ มหาวิทยาลัยราชภัฏศรีสะเกษ" />
+        <meta name="author" content="มหาวิทยาลัยราชภัฏศรีสะเกษ" />
+        <title>สาขาวิทยาการคอมพิวเตอร์ - มหาวิทยาลัยราชภัฏศรีสะเกษ</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="{% static 'assets/favicon.ico' %}" />
-        <!-- Bootstrap icons-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" type="text/css" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+        <style>
+            :root {
+                --bs-primary: #D4AF37;
+                --bs-secondary: #FFFFFF;
+            }
+            .bg-primary {
+                background-color: #FFFFFF !important;
+            }
+            .bg-secondary {
+                background-color: #D4AF37 !important;
+            }
+            .text-white {
+                color: #000000 !important;
+            }
+            .text-secondary {
+                color: #D4AF37 !important;
+            }
+            .btn-primary {
+                background-color: #D4AF37;
+                border-color: #D4AF37;
+            }
+            .btn-primary:hover {
+                background-color: #C4A137;
+                border-color: #C4A137;
+            }
+            .btn-outline-light {
+                color: #D4AF37;
+                border-color: #D4AF37;
+            }
+            .btn-outline-light:hover {
+                color: #FFFFFF;
+                background-color: #D4AF37;
+                border-color: #D4AF37;
+            }
+        </style>
     </head>
-    <body>
+    <body id="page-top">
         <!-- Navigation-->
-        <nav class="navbar navbar-light bg-light static-top">
+        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand" href="#!">Comsci66</a>
-                <a class="navbar-brand" href="#signup">หน้าแรก</a>
-                <a class="navbar-brand" href="#signup">เกี่ยวกับ</a>
-                <a class="navbar-brand" href="#signup">ลงชื่อเข้าใช้</a>
+                <a class="navbar-brand" href="#page-top">วิทยาการคอมพิวเตอร์</a>
+                <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    เมนู
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'index' %}">หน้าแรก</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'about' %}">เกี่ยวกับเรา</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'contact' %}">ติดต่อ</a></li>
+                    </ul>
+                </div>
             </div>
         </nav>
 
         {% block content %}{% endblock content %}
 
-        {% block footer %}
-            <!-- Footer-->
-        <footer class="footer bg-light">
+        <footer class="footer text-center">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
-                        <ul class="list-inline mb-2">
-                            <li class="list-inline-item"><a href="#!">About</a></li>
-                            <li class="list-inline-item">⋅</li>
-                            <li class="list-inline-item"><a href="#!">Contact</a></li>
-                            <li class="list-inline-item">⋅</li>
-                            <li class="list-inline-item"><a href="#!">Terms of Use</a></li>
-                            <li class="list-inline-item">⋅</li>
-                            <li class="list-inline-item"><a href="#!">Privacy Policy</a></li>
-                        </ul>
-                        <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2023. All Rights Reserved.</p>
+                    <!-- Footer Location-->
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h4 class="text-uppercase mb-4">ที่อยู่</h4>
+                        <p class="lead mb-0">
+                            319 ถนนไทยพันทา ตำบลโพธิ์
+                            <br />
+                            อำเภอเมือง จังหวัดศรีสะเกษ 33000
+                        </p>
                     </div>
-                    <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
-                        <ul class="list-inline mb-0">
-                            <li class="list-inline-item me-4">
-                                <a href="#!"><i class="bi-facebook fs-3"></i></a>
-                            </li>
-                            <li class="list-inline-item me-4">
-                                <a href="#!"><i class="bi-twitter fs-3"></i></a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#!"><i class="bi-instagram fs-3"></i></a>
-                            </li>
-                        </ul>
+                    <!-- Footer Social Icons-->
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h4 class="text-uppercase mb-4">ติดตามเรา</h4>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-linkedin-in"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-dribbble"></i></a>
+                    </div>
+                    <!-- Footer About Text-->
+                    <div class="col-lg-4">
+                        <h4 class="text-uppercase mb-4">เกี่ยวกับมหาวิทยาลัย</h4>
+                        <p class="lead mb-0">
+                            มหาวิทยาลัยราชภัฏศรีสะเกษ เป็นสถาบันอุดมศึกษาเพื่อการพัฒนาท้องถิ่น
+                        </p>
                     </div>
                 </div>
             </div>
         </footer>
-        {% endblock footer %}
-
+        <!-- Copyright Section-->
+        <div class="copyright py-4 text-center text-white">
+            <div class="container"><small>Copyright &copy; มหาวิทยาลัยราชภัฏศรีสะเกษ 2023</small></div>
+        </div>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->

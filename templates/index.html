@@ -1,2 +1,45 @@
 {% extends "base.html" %}
 {% load static %}
+
+{% block content %}
+<head>
+    <style>
+        .content-image {
+            max-width: 100%;        /* ทำให้รูปภาพไม่เกินขนาดของ container */
+            height: auto;           /* ควบคุมอัตราส่วนของรูปภาพ */
+            border: 2px solid #ddd; /* ขอบของรูปภาพ */
+            border-radius: 10%;     /* ทำให้ขอบของรูปภาพเป็นรูปวงกลม */
+            padding: 5px;           /* เพิ่มช่องว่างระหว่างขอบและเนื้อหาของรูปภาพ */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* เพิ่มเงาให้กับรูปภาพ (ถ้าต้องการ) */
+            margin-top: 20px;       /* เพิ่มช่องว่างด้านบนของรูปภาพ */
+            display: block;         /* แสดงรูปภาพเป็นบล็อก */
+            margin-left: auto;      /* จัดกลางรูปภาพใน container */
+            margin-right: auto;     /* จัดกลางรูปภาพใน container */
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+    <!-- Masthead-->
+    <header class="masthead bg-primary text-white text-center">
+        <div class="container d-flex align-items-center flex-column">
+            <!-- Masthead Avatar Image-->
+            <img class="masthead-avatar mb-5" src="{% static 'assets/img/icon.png' %}" alt="สัญลักษณ์วิทยาการคอมพิวเตอร์" />
+            <!-- Masthead Heading-->
+            <h1 class="masthead-heading text-uppercase mb-0">สาขาวิทยาการคอมพิวเตอร์</h1>
+            <p class="masthead-subheading font-weight-light mb-0">มหาวิทยาลัยราชภัฏศรีสะเกษ</p>
+        </div>
+    </header>
+
+    <section class="content-section text-center">
+        <div class="container">
+            <img class="content-image" src="https://scontent-bkk1-2.xx.fbcdn.net/v/t39.30808-6/450054923_863881429118803_2906487664665253319_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeElxgZ_-Gt0BmzcF9MO0hcXqsedekKzGdyqx516QrMZ3E0Vs-BiLppb9jMGIyzEXL9eKSiiBX7l8D_v4qxLaGId&_nc_ohc=gJqynsXgK38Q7kNvgF1-ph_&_nc_ht=scontent-bkk1-2.xx&_nc_gid=A6PZ7xfb0u9pQobZ-z4s3DB&oh=00_AYBwAhZX_vtjVplf8hS_F9h-IrS2WM8wxk3q7Zk8bJwTpw&oe=66E77588" alt="รูปภาพประกอบ" />
+        </div>
+    </section>
+
+</body>
+
+{% endblock content %}
